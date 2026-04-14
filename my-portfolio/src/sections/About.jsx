@@ -28,31 +28,42 @@ export default function About() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ delay: 0.2 }}
+        transition={{ delay: 0.15 }}
         className="text-[#94a3b8] text-lg leading-relaxed max-w-2xl mb-4"
       >
-        I build backend systems that are secure, scalable, and production-ready.
-        With hands-on experience in REST API design, JWT-based authentication, and
-        MongoDB schema architecture, I focus on solving real problems — not just writing code.
+        I specialize in designing backend systems with a strong focus on scalability,
+        security, and clean architecture.
       </motion.p>
 
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ delay: 0.3 }}
+        transition={{ delay: 0.25 }}
+        className="text-[#94a3b8] text-base leading-relaxed max-w-2xl mb-4"
+      >
+        I have hands-on experience building REST APIs using Node.js, Express.js, and MongoDB,
+        implementing authentication systems with JWT and role-based access control, and deploying
+        full-stack applications to production.
+      </motion.p>
+
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.35 }}
         className="text-[#64748b] text-base leading-relaxed max-w-2xl mb-12"
       >
         Currently pursuing B.Tech in Information Technology at G. H. Raisoni College of
-        Engineering & Management, Pune. Actively seeking internship opportunities where
-        I can contribute from day one.
+        Engineering & Management, Pune. Available for internship roles where I can contribute
+        from day one.
       </motion.p>
 
       <motion.h3
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ delay: 0.35 }}
+        transition={{ delay: 0.4 }}
         className="text-sm font-semibold text-[#64748b] uppercase tracking-widest mb-4"
       >
         Tech Stack & Tools

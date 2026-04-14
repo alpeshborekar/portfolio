@@ -20,10 +20,10 @@ export default function Contact() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ delay: 0.2 }}
-        className="text-[#94a3b8] mb-2 text-lg leading-relaxed"
+        className="text-[#94a3b8] text-lg leading-relaxed mb-3"
       >
         I'm actively looking for backend or full stack internship roles where I can
-        build real systems and grow fast.
+        contribute to real-world systems and grow as a developer.
       </motion.p>
 
       <motion.p
@@ -31,9 +31,9 @@ export default function Contact() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ delay: 0.3 }}
-        className="text-[#64748b] mb-10"
+        className="text-[#64748b] mb-10 italic"
       >
-        If your team ships products people use — let's talk.
+        If your team builds products people use — I'd love to be a part of it.
       </motion.p>
 
       <motion.div
@@ -87,7 +87,7 @@ export default function Contact() {
       </motion.a>
 
       <p className="mt-16 text-xs text-[#334155]">
-        Designed & Built by <span className="text-[#6366f1]">Alpesh Borekar</span> · 2026
+        Designed & Built by <span className="text-[#6366f1]">Alpesh Borekar</span> · 2025
       </p>
     </section>
   )

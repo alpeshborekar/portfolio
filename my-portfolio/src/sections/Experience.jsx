@@ -56,9 +56,7 @@ export default function Experience() {
             transition={{ delay: i * 0.1 }}
             className="relative pl-8 pb-10 last:pb-0"
           >
-            {/* Timeline dot */}
             <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-[#6366f1] ring-4 ring-[#6366f1]/20" />
-
             <div className="border border-white/10 bg-white/5 rounded-xl p-5 backdrop-blur-sm">
               <div className="flex items-start flex-wrap gap-2 mb-1">
                 <h3 className="font-semibold text-[#e2e8f0]">{exp.role}</h3>

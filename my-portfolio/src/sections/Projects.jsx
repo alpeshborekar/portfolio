@@ -5,28 +5,41 @@ const projects = [
   {
     title: 'SkillMatch Platform',
     badge: '⭐ Featured',
-    description:
-      'Engineered a full-stack job platform where candidates and employers are matched based on skill compatibility scores. Designed a custom scoring algorithm, implemented JWT authentication with three-tier RBAC (candidate / employer / admin), and enforced database-level constraints using MongoDB indexing to prevent duplicate applications. Deployed frontend on Vercel and backend on Render.',
-    tech: ['Node.js', 'Express.js', 'MongoDB Atlas', 'JWT', 'React', 'Vercel', 'Render'],
-    github: 'https://github.com/alpeshborekar',
+    description: 'Built a full-stack job matching platform with intelligent skill-based filtering.',
+    bullets: [
+      'Designed a custom scoring algorithm to match candidates with opportunities',
+      'Implemented JWT authentication with three-tier RBAC (candidate / employer / admin)',
+      'Prevented duplicate applications using MongoDB indexing and constraints',
+      'Deployed frontend on Vercel and backend on Render',
+    ],
+    tech: ['Node.js', 'Express.js', 'MongoDB', 'JWT', 'React', 'Vercel', 'Render'],
+    github: 'https://github.com/alpeshborekar/skillmatch-platform',
     demo: 'https://skillmatch-platform.vercel.app',
   },
   {
     title: 'WanderLust',
     badge: null,
-    description:
-      'Architected a RESTful backend for a property listing and booking system. Implemented ownership-based authorization ensuring only listing creators can modify their content. Designed structured MongoDB schemas with validation rules and built consistent error-handling middleware across all endpoints.',
+    description: 'Developed a RESTful backend for a property listing and booking system.',
+    bullets: [
+      'Implemented ownership-based authorization for secure content control',
+      'Designed structured MongoDB schemas with validation rules',
+      'Built centralized error-handling middleware for consistent API responses',
+    ],
     tech: ['Node.js', 'Express.js', 'MongoDB', 'REST API'],
-    github: 'https://github.com/alpeshborekar',
+    github: 'https://github.com/alpeshborekar/wanderlust',
     demo: null,
   },
   {
     title: 'Python Resume Analyzer',
     badge: null,
-    description:
-      'Built a modular NLP pipeline that parses resumes, extracts structured fields (skills, education, experience), and calculates a percentage match against job descriptions using text processing and regex. Designed for extensibility — new job roles can be added without changing core logic.',
+    description: 'Built an NLP-based system to analyze resumes and match them with job descriptions.',
+    bullets: [
+      'Extracted structured data (skills, education, experience) from raw resumes',
+      'Calculated skill-match percentage using regex and text processing',
+      'Designed modular architecture for easy extension to new job roles',
+    ],
     tech: ['Python', 'NLP', 'Regex', 'Text Processing'],
-    github: 'https://github.com/alpeshborekar',
+    github: 'https://github.com/alpeshborekar/resume-analyzer',
     demo: null,
   },
 ]
@@ -56,7 +69,7 @@ export default function Projects() {
             whileHover={{ scale: 1.02, boxShadow: '0 0 30px rgba(99,102,241,0.15)' }}
             className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 flex flex-col gap-4 transition-all duration-300"
           >
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between gap-2">
               <h3 className="text-lg font-semibold text-[#e2e8f0]">{p.title}</h3>
               {p.badge && (
                 <span className="text-xs px-2 py-1 rounded-full bg-[#22c55e]/15 text-[#22c55e] font-medium whitespace-nowrap">
@@ -65,9 +78,16 @@ export default function Projects() {
               )}
             </div>
 
-            <p className="text-sm text-[#94a3b8] flex-1 leading-relaxed">
-              {p.description}
-            </p>
+            <p className="text-sm text-[#94a3b8]">{p.description}</p>
+
+            <ul className="flex flex-col gap-1.5 flex-1">
+              {p.bullets.map((b) => (
+                <li key={b} className="flex items-start gap-2 text-sm text-[#64748b]">
+                  <span className="text-[#6366f1] mt-0.5 shrink-0">→</span>
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
 
             <div className="flex flex-wrap gap-2">
               {p.tech.map(t => (
@@ -80,6 +100,7 @@ export default function Projects() {
               ))}
             </div>
 
+            {/* ✅ FIXED LINKS */}
             <div className="flex gap-4 pt-2 border-t border-white/5">
               <a
                 href={p.github}
@@ -101,7 +122,7 @@ export default function Projects() {
                 </a>
               ) : (
                 <span className="flex items-center gap-1 text-sm text-[#334155] select-none">
-                  <FiExternalLink /> No Demo
+                  <FiExternalLink /> Backend Only
                 </span>
               )}
             </div>

@@ -7,11 +7,9 @@ export default function Hero() {
       id="hero"
       className="min-h-screen flex flex-col items-center justify-center text-center px-6 relative overflow-hidden"
     >
-      {/* Background glow blobs */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#6366f1]/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 left-1/4 w-[300px] h-[300px] bg-[#22c55e]/5 rounded-full blur-[100px] pointer-events-none" />
 
-      {/* Profile Photo */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -19,11 +17,7 @@ export default function Hero() {
         className="mb-6 relative"
       >
         <div className="w-32 h-32 rounded-full ring-4 ring-[#6366f1]/40 ring-offset-4 ring-offset-[#0f172a] overflow-hidden shadow-xl shadow-[#6366f1]/20">
-          <img
-            src={alpeshImg}
-            alt="Alpesh Borekar"
-            className="w-full h-full object-cover"
-          />
+          <img src={alpeshImg} alt="Alpesh Borekar" className="w-full h-full object-cover" />
         </div>
         <span className="absolute bottom-1 right-1 w-4 h-4 bg-[#22c55e] rounded-full border-2 border-[#0f172a]" />
       </motion.div>
@@ -34,7 +28,7 @@ export default function Hero() {
         transition={{ delay: 0.2 }}
         className="text-[#22c55e] text-sm font-semibold tracking-widest uppercase mb-4"
       >
-        Open to Internship Opportunities
+        Actively Seeking Internship Opportunities
       </motion.p>
 
       <motion.h1
@@ -61,16 +55,30 @@ export default function Hero() {
         transition={{ delay: 0.6 }}
         className="mt-4 max-w-2xl text-[#64748b] text-base leading-relaxed"
       >
-        I design and ship production-ready APIs, secure authentication systems,
-        and full-stack web applications — from architecture to deployment.
+        I build scalable APIs, secure authentication systems, and production-ready
+        web applications — from backend architecture to deployment.
       </motion.p>
 
-      {/* 3 Highlight Badges */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.7 }}
-        className="mt-6 flex flex-wrap justify-center gap-3"
+        className="mt-6 flex flex-col items-center gap-2 text-sm text-[#94a3b8]"
+      >
+        {[
+          '✔ Built 3+ full-stack projects with real-world use cases',
+          '✔ Experienced in JWT authentication, RBAC, REST APIs',
+          '✔ Actively seeking backend / full stack internship opportunities',
+        ].map((item) => (
+          <span key={item}>{item}</span>
+        ))}
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.78 }}
+        className="mt-5 flex flex-wrap justify-center gap-3"
       >
         {[
           '⚡ REST APIs · JWT · RBAC',
@@ -86,7 +94,6 @@ export default function Hero() {
         ))}
       </motion.div>
 
-      {/* CTA Buttons */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
