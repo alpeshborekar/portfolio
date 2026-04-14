@@ -87,7 +87,7 @@ export default function Contact() {
       </motion.a>
 
       <p className="mt-16 text-xs text-[#334155]">
-        Designed & Built by <span className="text-[#6366f1]">Alpesh Borekar</span> · 2025
+        Designed & Built by <span className="text-[#6366f1]">Alpesh Borekar</span> · 2026
       </p>
     </section>
   )
