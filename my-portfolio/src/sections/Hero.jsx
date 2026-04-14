@@ -7,9 +7,11 @@ export default function Hero() {
       id="hero"
       className="min-h-screen flex flex-col items-center justify-center text-center px-6 relative overflow-hidden"
     >
+      {/* Background glow blobs */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#6366f1]/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 left-1/4 w-[300px] h-[300px] bg-[#22c55e]/5 rounded-full blur-[100px] pointer-events-none" />
 
+      {/* Profile Photo */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -17,11 +19,16 @@ export default function Hero() {
         className="mb-6 relative"
       >
         <div className="w-32 h-32 rounded-full ring-4 ring-[#6366f1]/40 ring-offset-4 ring-offset-[#0f172a] overflow-hidden shadow-xl shadow-[#6366f1]/20">
-          <img src={alpeshImg} alt="Alpesh Borekar" className="w-full h-full object-cover" />
+          <img
+            src={alpeshImg}
+            alt="Alpesh Borekar"
+            className="w-full h-full object-cover"
+          />
         </div>
         <span className="absolute bottom-1 right-1 w-4 h-4 bg-[#22c55e] rounded-full border-2 border-[#0f172a]" />
       </motion.div>
 
+      {/* Available badge */}
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -31,6 +38,7 @@ export default function Hero() {
         Actively Seeking Internship Opportunities
       </motion.p>
 
+      {/* Name */}
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -40,30 +48,36 @@ export default function Hero() {
         Hi, I'm <span className="text-[#6366f1]">Alpesh Borekar</span>
       </motion.h1>
 
+      {/* Role */}
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5 }}
         className="mt-4 text-xl md:text-2xl text-[#94a3b8] font-light"
       >
-        Backend-Focused Full Stack Developer
+        Backend-Focused Full Stack Developer{' '}
+        <span className="text-[#64748b] text-lg">
+          specializing in scalable API systems
+        </span>
       </motion.p>
 
+      {/* Description */}
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6 }}
-        className="mt-4 max-w-2xl text-[#64748b] text-base leading-relaxed"
+        className="mt-4 max-w-2xl text-[#94a3b8] text-base leading-relaxed"
       >
         I build scalable APIs, secure authentication systems, and production-ready
         web applications — from backend architecture to deployment.
       </motion.p>
 
+      {/* Bullets */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.7 }}
-        className="mt-6 flex flex-col items-center gap-2 text-sm text-[#94a3b8]"
+        className="mt-6 flex flex-col items-start gap-2 text-sm text-[#94a3b8]"
       >
         {[
           '✔ Built 3+ full-stack projects with real-world use cases',
@@ -74,16 +88,17 @@ export default function Hero() {
         ))}
       </motion.div>
 
+      {/* Badges */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.78 }}
-        className="mt-5 flex flex-wrap justify-center gap-3"
+        className="mt-6 flex flex-wrap justify-center gap-3"
       >
         {[
-          '⚡ REST APIs · JWT · RBAC',
+          '⚡ REST APIs · JWT Auth · RBAC',
           '🛠️ Node.js · MongoDB · React',
-          '🚀 Deployed on Vercel & Render',
+          '🚀 Deployed (Vercel + Render)',
         ].map((item) => (
           <span
             key={item}
@@ -94,6 +109,7 @@ export default function Hero() {
         ))}
       </motion.div>
 
+      {/* ✅ FIXED CTA BUTTONS */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -109,7 +125,7 @@ export default function Hero() {
 
         <a
           href="#contact"
-          className="px-6 py-3 rounded-lg border border-[#6366f1]/40 text-[#6366f1] font-semibold hover:bg-[#6366f1]/10 transition-colors duration-200"
+          className="px-6 py-3 rounded-lg border border-[#6366f1]/40 text-[#818cf8] font-semibold hover:bg-[#6366f1]/10 hover:border-[#6366f1] transition-all duration-200"
         >
           Contact Me
         </a>
