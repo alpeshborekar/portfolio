@@ -20,17 +20,27 @@ export default function Contact() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ delay: 0.2 }}
-        className="text-[#94a3b8] mb-10"
+        className="text-[#94a3b8] mb-2 text-lg leading-relaxed"
       >
-        I'm actively looking for internship opportunities. Whether you have a question,
-        a project idea, or just want to connect — my inbox is always open!
+        I'm actively looking for backend or full stack internship roles where I can
+        build real systems and grow fast.
+      </motion.p>
+
+      <motion.p
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.3 }}
+        className="text-[#64748b] mb-10"
+      >
+        If your team ships products people use — let's talk.
       </motion.p>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ delay: 0.3 }}
+        transition={{ delay: 0.35 }}
         className="flex justify-center gap-6 mb-10"
       >
         {[
@@ -47,7 +57,7 @@ export default function Contact() {
           {
             icon: <FiLinkedin size={20} />,
             label: 'LinkedIn',
-            href: 'https://www.linkedin.com/in/alpesh-borekar-942622297/',
+            href: 'https://linkedin.com/in/alpesh-borekar',
           },
         ].map(({ icon, label, href }) => (
           <a
@@ -70,7 +80,7 @@ export default function Contact() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ delay: 0.4 }}
+        transition={{ delay: 0.45 }}
         className="inline-block px-8 py-3 rounded-lg bg-[#6366f1] text-white font-semibold hover:bg-[#4f46e5] transition-colors duration-200 shadow-lg shadow-[#6366f1]/20"
       >
         Say Hello 👋

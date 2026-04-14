@@ -6,27 +6,27 @@ const projects = [
     title: 'SkillMatch Platform',
     badge: '⭐ Featured',
     description:
-      'Built a full-stack job platform with JWT authentication, RBAC, and a custom skill-matching algorithm to connect users with relevant opportunities.',
-    tech: ['Node.js', 'Express.js', 'MongoDB Atlas', 'JWT', 'React'],
-    github: 'https://github.com/alpeshborekar/skillmatch-platform', // ⚠️ update if needed
+      'Engineered a full-stack job platform where candidates and employers are matched based on skill compatibility scores. Designed a custom scoring algorithm, implemented JWT authentication with three-tier RBAC (candidate / employer / admin), and enforced database-level constraints using MongoDB indexing to prevent duplicate applications. Deployed frontend on Vercel and backend on Render.',
+    tech: ['Node.js', 'Express.js', 'MongoDB Atlas', 'JWT', 'React', 'Vercel', 'Render'],
+    github: 'https://github.com/alpeshborekar',
     demo: 'https://skillmatch-platform.vercel.app',
   },
   {
     title: 'WanderLust',
     badge: null,
     description:
-      'Developed a backend system for property listing and booking with role-based access control, structured MongoDB schemas, and ownership-based authorization.',
-    tech: ['Node.js', 'Express.js', 'MongoDB'],
-    github: 'https://github.com/alpeshborekar/wanderlust', // ⚠️ update if needed
+      'Architected a RESTful backend for a property listing and booking system. Implemented ownership-based authorization ensuring only listing creators can modify their content. Designed structured MongoDB schemas with validation rules and built consistent error-handling middleware across all endpoints.',
+    tech: ['Node.js', 'Express.js', 'MongoDB', 'REST API'],
+    github: 'https://github.com/alpeshborekar',
     demo: null,
   },
   {
     title: 'Python Resume Analyzer',
     badge: null,
     description:
-      'Built an NLP-based system to extract structured data from resumes and calculate skill-match percentage against job descriptions.',
+      'Built a modular NLP pipeline that parses resumes, extracts structured fields (skills, education, experience), and calculates a percentage match against job descriptions using text processing and regex. Designed for extensibility — new job roles can be added without changing core logic.',
     tech: ['Python', 'NLP', 'Regex', 'Text Processing'],
-    github: 'https://github.com/alpeshborekar/python-resume-analyzer', // ⚠️ update if needed
+    github: 'https://github.com/alpeshborekar',
     demo: null,
   },
 ]
@@ -53,30 +53,22 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            whileHover={{
-              scale: 1.03,
-              boxShadow: '0 0 30px rgba(99,102,241,0.15)',
-            }}
+            whileHover={{ scale: 1.02, boxShadow: '0 0 30px rgba(99,102,241,0.15)' }}
             className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 flex flex-col gap-4 transition-all duration-300"
           >
-            {/* Title + Badge */}
             <div className="flex items-center justify-between">
-              <h3 className="text-lg font-semibold text-[#e2e8f0]">
-                {p.title}
-              </h3>
+              <h3 className="text-lg font-semibold text-[#e2e8f0]">{p.title}</h3>
               {p.badge && (
-                <span className="text-xs px-2 py-1 rounded-full bg-[#22c55e]/15 text-[#22c55e] font-medium">
+                <span className="text-xs px-2 py-1 rounded-full bg-[#22c55e]/15 text-[#22c55e] font-medium whitespace-nowrap">
                   {p.badge}
                 </span>
               )}
             </div>
 
-            {/* Description */}
-            <p className="text-sm text-[#94a3b8] flex-1">
+            <p className="text-sm text-[#94a3b8] flex-1 leading-relaxed">
               {p.description}
             </p>
 
-            {/* Tech Stack */}
             <div className="flex flex-wrap gap-2">
               {p.tech.map(t => (
                 <span
@@ -88,8 +80,7 @@ export default function Projects() {
               ))}
             </div>
 
-            {/* Links */}
-            <div className="flex gap-4 pt-2">
+            <div className="flex gap-4 pt-2 border-t border-white/5">
               <a
                 href={p.github}
                 target="_blank"
@@ -109,8 +100,8 @@ export default function Projects() {
                   <FiExternalLink /> Live Demo
                 </a>
               ) : (
-                <span className="flex items-center gap-1 text-sm text-[#334155]">
-                  <FiExternalLink /> Backend Only
+                <span className="flex items-center gap-1 text-sm text-[#334155] select-none">
+                  <FiExternalLink /> No Demo
                 </span>
               )}
             </div>

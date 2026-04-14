@@ -2,8 +2,8 @@ import { motion } from 'framer-motion'
 
 const skills = [
   'JavaScript (ES6+)', 'Java', 'Python',
-  'Node.js', 'Express.js', 'REST APIs',
-  'JWT Auth', 'RBAC', 'bcrypt',
+  'Node.js', 'Express.js', 'REST API Design',
+  'JWT Authentication', 'RBAC', 'bcrypt',
   'React', 'HTML', 'CSS',
   'MongoDB', 'MongoDB Atlas', 'Schema Design',
   'Git', 'GitHub', 'Postman',
@@ -31,9 +31,9 @@ export default function About() {
         transition={{ delay: 0.2 }}
         className="text-[#94a3b8] text-lg leading-relaxed max-w-2xl mb-4"
       >
-        Backend-focused Full Stack Developer with hands-on experience building scalable REST APIs
-        using Node.js, Express.js, and MongoDB. Experienced in JWT authentication, role-based access
-        control, and efficient database design.
+        I build backend systems that are secure, scalable, and production-ready.
+        With hands-on experience in REST API design, JWT-based authentication, and
+        MongoDB schema architecture, I focus on solving real problems — not just writing code.
       </motion.p>
 
       <motion.p
@@ -43,8 +43,20 @@ export default function About() {
         transition={{ delay: 0.3 }}
         className="text-[#64748b] text-base leading-relaxed max-w-2xl mb-12"
       >
-        🎓 B.Tech in Information Technology · G. H. Raisoni College of Engineering & Management, Pune
+        Currently pursuing B.Tech in Information Technology at G. H. Raisoni College of
+        Engineering & Management, Pune. Actively seeking internship opportunities where
+        I can contribute from day one.
       </motion.p>
+
+      <motion.h3
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.35 }}
+        className="text-sm font-semibold text-[#64748b] uppercase tracking-widest mb-4"
+      >
+        Tech Stack & Tools
+      </motion.h3>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
         {skills.map((skill, i) => (
@@ -55,7 +67,7 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ delay: i * 0.04 }}
             whileHover={{ scale: 1.05, borderColor: '#6366f1' }}
-            className="px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-sm text-[#cbd5e1] text-center font-medium backdrop-blur-sm cursor-default transition-colors duration-200"
+            className="px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-sm text-[#cbd5e1] text-center font-medium backdrop-blur-sm cursor-default transition-all duration-200"
           >
             {skill}
           </motion.div>
