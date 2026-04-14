@@ -4,7 +4,7 @@ const experiences = [
   {
     role: 'B.Tech — Information Technology',
     org: 'G. H. Raisoni College of Engineering & Management, Pune',
-    period: '2022 – Present',
+    period: '2023 – 2027',
     desc: 'Studying core CS fundamentals, data structures, algorithms, databases, and web development — while simultaneously building and deploying real-world full-stack applications.',
   },
   {
