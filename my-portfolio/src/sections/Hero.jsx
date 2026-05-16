@@ -8,6 +8,7 @@ export default function Hero() {
       id="hero"
       className="min-h-screen flex flex-col justify-center px-6 sm:px-10 lg:px-20 pt-24 pb-16 relative overflow-hidden"
     >
+      {/* Background Grid */}
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
@@ -17,16 +18,17 @@ export default function Hero() {
         }}
       />
 
+      {/* Glow Effects */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#f59e0b]/5 rounded-full blur-[150px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#10b981]/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto w-full">
         <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12 lg:gap-0">
 
-          {/* Left */}
+          {/* Left Content */}
           <div className="flex-1 text-center lg:text-left">
 
-            {/* Status badge */}
+            {/* Status */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -40,11 +42,15 @@ export default function Hero() {
               </span>
             </motion.div>
 
-            {/* Name */}
+            {/* Heading */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              transition={{
+                delay: 0.2,
+                duration: 0.7,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               className="font-display font-bold text-5xl sm:text-6xl lg:text-7xl text-[#e8e4dc] leading-[1.05] mb-4"
             >
               Alpesh
@@ -52,7 +58,7 @@ export default function Hero() {
               <span className="text-[#f59e0b]">Borekar</span>
             </motion.h1>
 
-            {/* Role */}
+            {/* Subtitle */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -66,7 +72,7 @@ export default function Hero() {
               secure systems and production-grade applications.
             </motion.p>
 
-            {/* Tech tags */}
+            {/* Skills */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -90,53 +96,42 @@ export default function Hero() {
               ))}
             </motion.div>
 
-            {/* CTA Buttons */}
+            {/* Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.55 }}
-              className="flex flex-row flex-wrap gap-3 justify-center lg:justify-start"
+              className="flex flex-wrap gap-3 justify-center lg:justify-start"
             >
 
+              {/* View Projects */}
               <a
-                href="projects.jsx"
-                onClick={(e) => {
-                  e.preventDefault()
-                  document
-                    .getElementById('projects')
-                    ?.scrollIntoView({ behavior: 'smooth' })
-                }}
-                className="px-5 py-2.5 rounded-xl bg-[#f59e0b] text-[#0c0c0e] font-semibold text-sm hover:bg-[#f59e0b]/90 transition-all duration-200 text-center shadow-lg shadow-[#f59e0b]/20 cursor-pointer"
+                href="#projects"
+                className="px-5 py-2.5 rounded-xl bg-[#f59e0b] text-[#0c0c0e] font-semibold text-sm hover:bg-[#f59e0b]/90 transition-all duration-200 text-center shadow-lg shadow-[#f59e0b]/20"
               >
                 View Projects
               </a>
 
+              {/* Contact */}
               <a
                 href="#contact"
-                onClick={(e) => {
-                  e.preventDefault()
-                  document
-                    .getElementById('contact')
-                    ?.scrollIntoView({ behavior: 'smooth' })
-                }}
-                className="px-5 py-2.5 rounded-xl border border-[#1e1e22] text-[#e8e4dc] font-semibold text-sm hover:border-[#f59e0b]/40 hover:text-[#f59e0b] transition-all duration-200 text-center cursor-pointer"
+                className="px-5 py-2.5 rounded-xl border border-[#1e1e22] text-[#e8e4dc] font-semibold text-sm hover:border-[#f59e0b]/40 hover:text-[#f59e0b] transition-all duration-200 text-center"
               >
                 Contact Me
               </a>
 
+              {/* Resume */}
               <a
                 href="/resume.pdf"
                 download="Alpesh_Borekar_Resume.pdf"
-                target="_blank"
-                rel="noreferrer"
-                className="px-5 py-2.5 rounded-xl border border-[#1e1e22] text-[#6b6b7b] font-semibold text-sm hover:text-[#e8e4dc] hover:border-[#2e2e36] transition-all duration-200 text-center cursor-pointer"
+                className="px-5 py-2.5 rounded-xl border border-[#1e1e22] text-[#6b6b7b] font-semibold text-sm hover:text-[#e8e4dc] hover:border-[#2e2e36] transition-all duration-200 text-center"
               >
                 Download CV
               </a>
 
             </motion.div>
 
-            {/* Social links */}
+            {/* Social Links */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -172,11 +167,15 @@ export default function Hero() {
 
           </div>
 
-          {/* Right - Photo */}
+          {/* Right Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            transition={{
+              delay: 0.3,
+              duration: 0.7,
+              ease: [0.22, 1, 0.36, 1],
+            }}
             className="relative shrink-0"
           >
             <div className="relative w-52 h-52 sm:w-64 sm:h-64 lg:w-72 lg:h-72">
@@ -198,23 +197,16 @@ export default function Hero() {
 
         </div>
 
-        {/* Scroll hint */}
+        {/* Scroll Down */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2 }}
           className="flex justify-center mt-16 lg:mt-20"
         >
-
           <a
             href="#about"
-            onClick={(e) => {
-              e.preventDefault()
-              document
-                .getElementById('about')
-                ?.scrollIntoView({ behavior: 'smooth' })
-            }}
-            className="flex flex-col items-center gap-2 text-[#6b6b7b] hover:text-[#f59e0b] transition-colors cursor-pointer"
+            className="flex flex-col items-center gap-2 text-[#6b6b7b] hover:text-[#f59e0b] transition-colors"
           >
             <span className="text-xs tracking-widest uppercase">
               Scroll
@@ -222,7 +214,6 @@ export default function Hero() {
 
             <FiArrowDown size={16} className="animate-bounce" />
           </a>
-
         </motion.div>
 
       </div>
