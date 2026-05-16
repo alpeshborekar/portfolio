@@ -18,7 +18,7 @@ export default function Hero() {
       />
 
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#f59e0b]/5 rounded-full blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#10b981]/4 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#10b981]/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto w-full">
         <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12 lg:gap-0">
@@ -26,6 +26,7 @@ export default function Hero() {
           {/* Left */}
           <div className="flex-1 text-center lg:text-left">
 
+            {/* Status badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -39,6 +40,7 @@ export default function Hero() {
               </span>
             </motion.div>
 
+            {/* Name */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -50,6 +52,7 @@ export default function Hero() {
               <span className="text-[#f59e0b]">Borekar</span>
             </motion.h1>
 
+            {/* Role */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -63,59 +66,84 @@ export default function Hero() {
               secure systems and production-grade applications.
             </motion.p>
 
+            {/* Tech tags */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.45 }}
               className="flex flex-wrap gap-2 mb-10 justify-center lg:justify-start"
             >
-              {['Node.js', 'Flask', 'MongoDB', 'React', 'JWT + RBAC', 'Gemini AI'].map(
-                (tag) => (
-                  <span
-                    key={tag}
-                    className="text-xs px-3 py-1 rounded-md bg-[#141416] border border-[#1e1e22] text-[#6b6b7b] font-medium"
-                  >
-                    {tag}
-                  </span>
-                )
-              )}
+              {[
+                'Node.js',
+                'Flask',
+                'MongoDB',
+                'React',
+                'JWT + RBAC',
+                'Gemini AI',
+              ].map((tag) => (
+                <span
+                  key={tag}
+                  className="text-xs px-3 py-1 rounded-md bg-[#141416] border border-[#1e1e22] text-[#6b6b7b] font-medium"
+                >
+                  {tag}
+                </span>
+              ))}
             </motion.div>
 
+            {/* CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.55 }}
-              className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start"
+              className="flex flex-row flex-wrap gap-3 justify-center lg:justify-start"
             >
+
               <a
                 href="#projects"
-                className="px-6 py-3 rounded-xl bg-[#f59e0b] text-[#0c0c0e] font-semibold text-sm hover:bg-[#f59e0b]/90 transition-all duration-200 text-center shadow-lg shadow-[#f59e0b]/20"
+                onClick={(e) => {
+                  e.preventDefault()
+                  document
+                    .getElementById('projects')
+                    ?.scrollIntoView({ behavior: 'smooth' })
+                }}
+                className="px-5 py-2.5 rounded-xl bg-[#f59e0b] text-[#0c0c0e] font-semibold text-sm hover:bg-[#f59e0b]/90 transition-all duration-200 text-center shadow-lg shadow-[#f59e0b]/20 cursor-pointer"
               >
                 View Projects
               </a>
 
               <a
                 href="#contact"
-                className="px-6 py-3 rounded-xl border border-[#1e1e22] text-[#e8e4dc] font-semibold text-sm hover:border-[#f59e0b]/40 hover:text-[#f59e0b] transition-all duration-200 text-center"
+                onClick={(e) => {
+                  e.preventDefault()
+                  document
+                    .getElementById('contact')
+                    ?.scrollIntoView({ behavior: 'smooth' })
+                }}
+                className="px-5 py-2.5 rounded-xl border border-[#1e1e22] text-[#e8e4dc] font-semibold text-sm hover:border-[#f59e0b]/40 hover:text-[#f59e0b] transition-all duration-200 text-center cursor-pointer"
               >
                 Contact Me
               </a>
 
               <a
                 href="/resume.pdf"
-                download
-                className="px-6 py-3 rounded-xl border border-[#1e1e22] text-[#6b6b7b] font-semibold text-sm hover:text-[#e8e4dc] transition-all duration-200 text-center"
+                download="Alpesh_Borekar_Resume.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="px-5 py-2.5 rounded-xl border border-[#1e1e22] text-[#6b6b7b] font-semibold text-sm hover:text-[#e8e4dc] hover:border-[#2e2e36] transition-all duration-200 text-center cursor-pointer"
               >
                 Download CV
               </a>
+
             </motion.div>
 
+            {/* Social links */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
               className="flex items-center gap-4 mt-8 justify-center lg:justify-start"
             >
+
               <a
                 href="https://github.com/alpeshborekar"
                 target="_blank"
@@ -126,7 +154,7 @@ export default function Hero() {
               </a>
 
               <a
-                href="https://linkedin.com/in/alpesh-borekar"
+                href="https://www.linkedin.com/in/alpesh-borekar-942622297/"
                 target="_blank"
                 rel="noreferrer"
                 className="text-[#6b6b7b] hover:text-[#e8e4dc] transition-colors"
@@ -139,6 +167,7 @@ export default function Hero() {
               <span className="text-xs text-[#6b6b7b]">
                 alpeshborekar33@gmail.com
               </span>
+
             </motion.div>
 
           </div>
@@ -169,15 +198,23 @@ export default function Hero() {
 
         </div>
 
+        {/* Scroll hint */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2 }}
           className="flex justify-center mt-16 lg:mt-20"
         >
+
           <a
             href="#about"
-            className="flex flex-col items-center gap-2 text-[#6b6b7b] hover:text-[#f59e0b] transition-colors"
+            onClick={(e) => {
+              e.preventDefault()
+              document
+                .getElementById('about')
+                ?.scrollIntoView({ behavior: 'smooth' })
+            }}
+            className="flex flex-col items-center gap-2 text-[#6b6b7b] hover:text-[#f59e0b] transition-colors cursor-pointer"
           >
             <span className="text-xs tracking-widest uppercase">
               Scroll
@@ -185,6 +222,7 @@ export default function Hero() {
 
             <FiArrowDown size={16} className="animate-bounce" />
           </a>
+
         </motion.div>
 
       </div>
