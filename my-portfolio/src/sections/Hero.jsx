@@ -99,7 +99,7 @@ export default function Hero() {
             >
 
               <a
-                href="#projects"
+                href="projects.jsx"
                 onClick={(e) => {
                   e.preventDefault()
                   document
