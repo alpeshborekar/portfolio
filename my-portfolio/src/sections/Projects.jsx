@@ -16,7 +16,7 @@ const projects = [
     ],
     tech: ['Python', 'Flask', 'React', 'MySQL', 'Redis', 'Celery', 'Gemini AI', 'JWT'],
     github: 'https://github.com/alpeshborekar',
-    demo: '#',
+    demo: 'https://resume-ai-ai-powered-ats-resume-ana.vercel.app/',
     accent: '#f59e0b',
   },
   {
@@ -33,7 +33,7 @@ const projects = [
     ],
     tech: ['Node.js', 'Express.js', 'MongoDB Atlas', 'JWT', 'React', 'Vercel', 'Render'],
     github: 'https://github.com/alpeshborekar/skillmatch-platform',
-    demo: 'https://skillmatch-platform.vercel.app',
+    demo: 'https://skillmatch-platform.vercel.app/login',
     accent: '#10b981',
   },
   {
@@ -91,7 +91,6 @@ export default function Projects() {
               transition={{ delay: i * 0.1 }}
               className="group relative p-6 sm:p-8 rounded-2xl border border-[#1e1e22] bg-[#141416] hover:border-[#2e2e36] transition-all duration-400 overflow-hidden"
             >
-              {/* Accent glow on hover */}
               <div
                 className="absolute top-0 left-0 w-full h-1 rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 style={{ backgroundColor: p.accent }}
@@ -99,7 +98,6 @@ export default function Projects() {
 
               <div className="flex flex-col sm:flex-row sm:items-start gap-6">
 
-                {/* Number */}
                 <span
                   className="font-display font-bold text-4xl sm:text-5xl leading-none opacity-20 shrink-0"
                   style={{ color: p.accent }}
@@ -107,7 +105,6 @@ export default function Projects() {
                   {p.num}
                 </span>
 
-                {/* Content */}
                 <div className="flex-1 min-w-0">
 
                   <div className="flex flex-wrap items-center gap-3 mb-2">

@@ -16,8 +16,8 @@ const links = [
   },
   {
     label: 'LinkedIn',
-    value: 'linkedin.com/in/alpesh-borekar',
-    href: 'https://linkedin.com/in/alpesh-borekar',
+    value: 'linkedin.com/in/alpesh-borekar-942622297',
+    href: 'https://www.linkedin.com/in/alpesh-borekar-942622297/',
     color: '#0ea5e9',
   },
 ]
