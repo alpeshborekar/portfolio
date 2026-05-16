@@ -1,149 +1,118 @@
 import { motion } from 'framer-motion'
 
-const experiences = [
+const items = [
   {
+    type: 'Leadership',
+    role: 'Design Lead',
+    org: 'GeeksforGeeks — GHRCEM Chapter',
+    period: '2024 – 2025',
+    color: '#f59e0b',
+    points: [
+      'Led the design team overseeing visual output for events, workshops, and community initiatives',
+      'Designed social media creatives and promotional assets with consistent branding across all communications',
+      'Managed creative direction for chapter activities and hackathon campaigns',
+    ],
+  },
+  {
+    type: 'Education',
     role: 'B.Tech — Information Technology',
-    org: 'G. H. Raisoni College of Engineering & Management, Pune',
-    period: '2022 – Present',
-    desc: 'Studying core CS fundamentals, data structures, algorithms, databases, and web development — while simultaneously building and deploying real-world full-stack applications.',
+    org: 'GH Raisoni College of Engineering & Management, Pune',
+    period: '2022 – Expected June 2027',
+    color: '#10b981',
+    points: [
+      'CGPA: 8.13 / 10',
+      'Core subjects: Data Structures, Algorithms, DBMS, Operating Systems, Web Development',
+      'Built and deployed multiple full-stack projects alongside academic curriculum',
+    ],
   },
   {
-    role: 'Full Stack Developer',
-    org: 'SkillMatch Platform · Self-Initiated',
-    period: '2024',
-    desc: 'Designed and shipped a production-grade job matching platform end-to-end. Implemented custom skill-scoring logic, three-tier RBAC, JWT auth, and deployed on Vercel + Render.',
-  },
-  {
-    role: 'Backend Developer',
-    org: 'WanderLust · Self-Initiated',
-    period: '2024',
-    desc: 'Built a secure RESTful backend for property listing and booking. Implemented ownership-based authorization, MongoDB schema validation, and centralized error handling.',
-  },
-  {
-    role: '100+ DSA Problems Solved',
-    org: 'Java · Arrays · Hashing · Sliding Window · Strings',
+    type: 'Achievement',
+    role: '100+ DSA Problems',
+    org: 'Java · Arrays · Hashing · Two Pointers · Sliding Window · Strings',
     period: '2023 – Present',
-    desc: 'Consistently solving algorithmic problems to strengthen problem-solving fundamentals. Covers core patterns used in technical interviews.',
+    color: '#a78bfa',
+    points: [
+      'Consistently solving algorithmic problems covering core interview patterns',
+      'Focus on time/space complexity optimization and clean solutions',
+    ],
   },
   {
+    type: 'Certification',
     role: 'Microsoft Azure Fundamentals',
-    org: 'AZ-900 Coursework',
+    org: 'AZ-900 — Coursework Completed',
     period: '2024',
-    desc: 'Completed coursework covering cloud concepts, core Azure services, security, compliance, and pricing models.',
+    color: '#06b6d4',
+    points: [
+      'Covered cloud concepts, core Azure services, security, and pricing models',
+      'Exam scheduled — building toward cloud deployment knowledge',
+    ],
   },
 ]
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 px-6 max-w-5xl mx-auto">
-      <motion.h2
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-3xl font-bold text-[#e2e8f0] mb-2"
-      >
-        Experience & <span className="text-[#6366f1]">Achievements</span>
-      </motion.h2>
-      <div className="w-12 h-1 bg-[#22c55e] rounded mb-10" />
+    <section id="experience" className="py-24 sm:py-32 px-6 sm:px-10 lg:px-20 border-t border-[#1e1e22]">
+      <div className="max-w-6xl mx-auto">
 
-      <div className="relative border-l-2 border-[#6366f1]/20 ml-3 flex flex-col gap-0">
-        {experiences.map((exp, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-            className="relative pl-8 pb-10 last:pb-0"
-          >
-            <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-[#6366f1] ring-4 ring-[#6366f1]/20" />
-            <div className="border border-white/10 bg-white/5 rounded-xl p-5 backdrop-blur-sm">
-              <div className="flex items-start flex-wrap gap-2 mb-1">
-                <h3 className="font-semibold text-[#e2e8f0]">{exp.role}</h3>
-                <span className="text-xs text-[#6366f1] bg-[#6366f1]/10 px-2 py-0.5 rounded-full">
-                  {exp.org}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-[#f59e0b] text-xs font-semibold tracking-[0.2em] uppercase mb-4"
+        >
+          Experience & Achievements
+        </motion.p>
+
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+          className="font-display font-bold text-3xl sm:text-4xl text-[#e8e4dc] mb-14"
+        >
+          What I've done
+        </motion.h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {items.map((item, i) => (
+            <motion.div
+              key={item.role}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="p-5 sm:p-6 rounded-2xl border border-[#1e1e22] bg-[#141416] hover:border-[#2e2e36] transition-all duration-300 flex flex-col gap-4"
+            >
+              <div className="flex items-start justify-between gap-2 flex-wrap">
+                <span
+                  className="text-xs font-semibold tracking-widest uppercase px-2 py-0.5 rounded"
+                  style={{ color: item.color, backgroundColor: `${item.color}15` }}
+                >
+                  {item.type}
                 </span>
+                <span className="text-xs text-[#6b6b7b]">{item.period}</span>
               </div>
-              <p className="text-xs text-[#64748b] mb-2">{exp.period}</p>
-              <p className="text-sm text-[#94a3b8] leading-relaxed">{exp.desc}</p>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-    </section>import { motion } from 'framer-motion'
 
-const experiences = [
-  {
-    role: 'B.Tech — Information Technology',
-    org: 'G. H. Raisoni College of Engineering & Management, Pune',
-    period: '2022 – Present',
-    desc: 'Studying core CS fundamentals, data structures, algorithms, databases, and web development — while simultaneously building and deploying real-world full-stack applications.',
-  },
-  {
-    role: 'Full Stack Developer',
-    org: 'SkillMatch Platform · Self-Initiated',
-    period: '2024',
-    desc: 'Designed and shipped a production-grade job matching platform end-to-end. Implemented custom skill-scoring logic, three-tier RBAC, JWT auth, and deployed on Vercel + Render.',
-  },
-  {
-    role: 'Backend Developer',
-    org: 'WanderLust · Self-Initiated',
-    period: '2024',
-    desc: 'Built a secure RESTful backend for property listing and booking. Implemented ownership-based authorization, MongoDB schema validation, and centralized error handling.',
-  },
-  {
-    role: '100+ DSA Problems Solved',
-    org: 'Java · Arrays · Hashing · Sliding Window · Strings',
-    period: '2023 – Present',
-    desc: 'Consistently solving algorithmic problems to strengthen problem-solving fundamentals. Covers core patterns used in technical interviews.',
-  },
-  {
-    role: 'Microsoft Azure Fundamentals',
-    org: 'AZ-900 Coursework',
-    period: '2024',
-    desc: 'Completed coursework covering cloud concepts, core Azure services, security, compliance, and pricing models.',
-  },
-]
-
-export default function Experience() {
-  return (
-    <section id="experience" className="py-16 sm:py-24 px-4 sm:px-6 max-w-5xl mx-auto">
-      <motion.h2
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-2xl sm:text-3xl font-bold text-[#e2e8f0] mb-2"
-      >
-        Experience & <span className="text-[#6366f1]">Achievements</span>
-      </motion.h2>
-      <div className="w-12 h-1 bg-[#22c55e] rounded mb-8 sm:mb-10" />
-
-      <div className="relative border-l-2 border-[#6366f1]/20 ml-2 sm:ml-3 flex flex-col gap-0">
-        {experiences.map((exp, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-            className="relative pl-6 sm:pl-8 pb-8 sm:pb-10 last:pb-0"
-          >
-            <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-[#6366f1] ring-4 ring-[#6366f1]/20" />
-            <div className="border border-white/10 bg-white/5 rounded-xl p-4 sm:p-5 backdrop-blur-sm">
-              <div className="flex flex-col sm:flex-row sm:items-center flex-wrap gap-1 sm:gap-2 mb-1">
-                <h3 className="font-semibold text-[#e2e8f0] text-sm sm:text-base">{exp.role}</h3>
-                <span className="text-xs text-[#6366f1] bg-[#6366f1]/10 px-2 py-0.5 rounded-full w-fit">
-                  {exp.org}
-                </span>
+              <div>
+                <h3 className="font-semibold text-[#e8e4dc] text-base mb-1">{item.role}</h3>
+                <p className="text-xs text-[#6b6b7b]">{item.org}</p>
               </div>
-              <p className="text-xs text-[#64748b] mb-2">{exp.period}</p>
-              <p className="text-xs sm:text-sm text-[#94a3b8] leading-relaxed">{exp.desc}</p>
-            </div>
-          </motion.div>
-        ))}
+
+              <ul className="flex flex-col gap-2">
+                {item.points.map(pt => (
+                  <li key={pt} className="flex items-start gap-2.5 text-xs text-[#6b6b7b] leading-relaxed">
+                    <span
+                      className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0"
+                      style={{ backgroundColor: item.color }}
+                    />
+                    {pt}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
-  )
-}
   )
 }

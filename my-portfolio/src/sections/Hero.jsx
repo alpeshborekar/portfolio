@@ -1,135 +1,193 @@
 import { motion } from 'framer-motion'
+import { FiArrowDown, FiGithub, FiLinkedin } from 'react-icons/fi'
 import alpeshImg from '../assets/alpesh.png'
 
 export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 relative overflow-hidden pt-24 pb-12"
+      className="min-h-screen flex flex-col justify-center px-6 sm:px-10 lg:px-20 pt-24 pb-16 relative overflow-hidden"
     >
-      {/* Background glow blobs */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-[#6366f1]/10 rounded-full blur-[100px] sm:blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 left-1/4 w-[200px] sm:w-[300px] h-[200px] sm:h-[300px] bg-[#22c55e]/5 rounded-full blur-[80px] sm:blur-[100px] pointer-events-none" />
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage:
+            'linear-gradient(#e8e4dc 1px, transparent 1px), linear-gradient(90deg, #e8e4dc 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }}
+      />
 
-      {/* Profile Photo */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.1, duration: 0.5 }}
-        className="mb-6 relative"
-      >
-        <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full ring-4 ring-[#6366f1]/40 ring-offset-4 ring-offset-[#0f172a] overflow-hidden shadow-xl shadow-[#6366f1]/20">
-          <img
-            src={alpeshImg}
-            alt="Alpesh Borekar"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <span className="absolute bottom-1 right-1 w-3 h-3 sm:w-4 sm:h-4 bg-[#22c55e] rounded-full border-2 border-[#0f172a]" />
-      </motion.div>
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#f59e0b]/5 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#10b981]/4 rounded-full blur-[120px] pointer-events-none" />
 
-      {/* Available badge */}
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2 }}
-        className="text-[#22c55e] text-xs sm:text-sm font-semibold tracking-widest uppercase mb-4"
-      >
-        Actively Seeking Internship Opportunities
-      </motion.p>
+      <div className="max-w-6xl mx-auto w-full">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12 lg:gap-0">
 
-      {/* Name */}
-      <motion.h1
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.35 }}
-        className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-[#e2e8f0] leading-tight"
-      >
-        Hi, I'm <span className="text-[#6366f1]">Alpesh Borekar</span>
-      </motion.h1>
+          {/* Left */}
+          <div className="flex-1 text-center lg:text-left">
 
-      {/* Role */}
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5 }}
-        className="mt-4 text-lg sm:text-xl md:text-2xl text-[#94a3b8] font-light px-2"
-      >
-        Backend-Focused Full Stack Developer{' '}
-        <span className="text-[#64748b] text-base sm:text-lg block sm:inline mt-1 sm:mt-0">
-          specializing in scalable API systems
-        </span>
-      </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#10b981]/30 bg-[#10b981]/5 mb-8"
+            >
+              <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse" />
 
-      {/* Description */}
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6 }}
-        className="mt-4 max-w-xl text-[#94a3b8] text-sm sm:text-base leading-relaxed px-2"
-      >
-        I build scalable APIs, secure authentication systems, and production-ready
-        web applications — from backend architecture to deployment.
-      </motion.p>
+              <span className="text-[#10b981] text-xs font-medium tracking-wide">
+                Available for Internship
+              </span>
+            </motion.div>
 
-      {/* Bullets */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.7 }}
-        className="mt-6 flex flex-col items-start gap-2 text-xs sm:text-sm text-[#94a3b8] px-2 w-full max-w-sm sm:max-w-md"
-      >
-        {[
-          '✔ Built 3+ full-stack projects with real-world use cases',
-          '✔ Experienced in JWT authentication, RBAC, REST APIs',
-          '✔ Actively seeking backend / full stack internship opportunities',
-        ].map((item) => (
-          <span key={item} className="text-left">{item}</span>
-        ))}
-      </motion.div>
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              className="font-display font-bold text-5xl sm:text-6xl lg:text-7xl text-[#e8e4dc] leading-[1.05] mb-4"
+            >
+              Alpesh
+              <br />
+              <span className="text-[#f59e0b]">Borekar</span>
+            </motion.h1>
 
-      {/* Badges */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.78 }}
-        className="mt-6 flex flex-wrap justify-center gap-2 sm:gap-3 px-2"
-      >
-        {[
-          '⚡ REST APIs · JWT Auth · RBAC',
-          '🛠️ Node.js · MongoDB · React',
-          '🚀 Deployed (Vercel + Render)',
-        ].map((item) => (
-          <span
-            key={item}
-            className="text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-white/10 bg-white/5 text-[#94a3b8] backdrop-blur-sm"
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35 }}
+              className="text-lg sm:text-xl text-[#6b6b7b] font-medium mb-6 max-w-lg mx-auto lg:mx-0"
+            >
+              Backend-Focused Full Stack Developer —{' '}
+              <span className="text-[#e8e4dc]">
+                building scalable APIs,
+              </span>{' '}
+              secure systems and production-grade applications.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.45 }}
+              className="flex flex-wrap gap-2 mb-10 justify-center lg:justify-start"
+            >
+              {['Node.js', 'Flask', 'MongoDB', 'React', 'JWT + RBAC', 'Gemini AI'].map(
+                (tag) => (
+                  <span
+                    key={tag}
+                    className="text-xs px-3 py-1 rounded-md bg-[#141416] border border-[#1e1e22] text-[#6b6b7b] font-medium"
+                  >
+                    {tag}
+                  </span>
+                )
+              )}
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.55 }}
+              className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start"
+            >
+              <a
+                href="#projects"
+                className="px-6 py-3 rounded-xl bg-[#f59e0b] text-[#0c0c0e] font-semibold text-sm hover:bg-[#f59e0b]/90 transition-all duration-200 text-center shadow-lg shadow-[#f59e0b]/20"
+              >
+                View Projects
+              </a>
+
+              <a
+                href="#contact"
+                className="px-6 py-3 rounded-xl border border-[#1e1e22] text-[#e8e4dc] font-semibold text-sm hover:border-[#f59e0b]/40 hover:text-[#f59e0b] transition-all duration-200 text-center"
+              >
+                Contact Me
+              </a>
+
+              <a
+                href="/resume.pdf"
+                download
+                className="px-6 py-3 rounded-xl border border-[#1e1e22] text-[#6b6b7b] font-semibold text-sm hover:text-[#e8e4dc] transition-all duration-200 text-center"
+              >
+                Download CV
+              </a>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7 }}
+              className="flex items-center gap-4 mt-8 justify-center lg:justify-start"
+            >
+              <a
+                href="https://github.com/alpeshborekar"
+                target="_blank"
+                rel="noreferrer"
+                className="text-[#6b6b7b] hover:text-[#e8e4dc] transition-colors"
+              >
+                <FiGithub size={18} />
+              </a>
+
+              <a
+                href="https://linkedin.com/in/alpesh-borekar"
+                target="_blank"
+                rel="noreferrer"
+                className="text-[#6b6b7b] hover:text-[#e8e4dc] transition-colors"
+              >
+                <FiLinkedin size={18} />
+              </a>
+
+              <span className="w-16 h-px bg-[#1e1e22]" />
+
+              <span className="text-xs text-[#6b6b7b]">
+                alpeshborekar33@gmail.com
+              </span>
+            </motion.div>
+
+          </div>
+
+          {/* Right - Photo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.3, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="relative shrink-0"
           >
-            {item}
-          </span>
-        ))}
-      </motion.div>
+            <div className="relative w-52 h-52 sm:w-64 sm:h-64 lg:w-72 lg:h-72">
 
-      {/* ✅ FIXED CTA BUTTONS */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.85 }}
-        className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto px-4 sm:px-0"
-      >
-        <a
-          href="#projects"
-          className="w-full sm:w-auto text-center px-6 py-3 rounded-lg bg-[#6366f1] text-white font-semibold hover:bg-[#4f46e5] transition-colors duration-200 shadow-lg shadow-[#6366f1]/20"
-        >
-          View Projects
-        </a>
+              <div className="absolute inset-0 rounded-2xl border border-[#f59e0b]/20 rotate-6" />
 
-        <a
-          href="#contact"
-          className="w-full sm:w-auto text-center px-6 py-3 rounded-lg border border-[#6366f1]/40 text-[#818cf8] font-semibold hover:bg-[#6366f1]/10 hover:border-[#6366f1] transition-all duration-200"
+              <div className="absolute inset-0 rounded-2xl border border-[#10b981]/10 -rotate-3" />
+
+              <img
+                src={alpeshImg}
+                alt="Alpesh Borekar"
+                className="relative z-10 w-full h-full object-cover rounded-2xl grayscale hover:grayscale-0 transition-all duration-500"
+              />
+
+              <div className="absolute -bottom-3 -right-3 w-16 h-16 bg-[#f59e0b]/10 rounded-xl border border-[#f59e0b]/20 z-0" />
+
+            </div>
+          </motion.div>
+
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2 }}
+          className="flex justify-center mt-16 lg:mt-20"
         >
-          Contact Me
-        </a>
-      </motion.div>
+          <a
+            href="#about"
+            className="flex flex-col items-center gap-2 text-[#6b6b7b] hover:text-[#f59e0b] transition-colors"
+          >
+            <span className="text-xs tracking-widest uppercase">
+              Scroll
+            </span>
+
+            <FiArrowDown size={16} className="animate-bounce" />
+          </a>
+        </motion.div>
+
+      </div>
     </section>
   )
 }

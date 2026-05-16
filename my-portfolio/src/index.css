@@ -4,10 +4,30 @@
 
 * {
   scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
 body {
-  background-color: #0f172a;
-  color: #e2e8f0;
-  font-family: 'Sora', sans-serif;
+  background-color: #0c0c0e;
+  color: #e8e4dc;
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #f59e0b;
+  color: #0c0c0e;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0c0c0e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f59e0b;
+  border-radius: 2px;
 }

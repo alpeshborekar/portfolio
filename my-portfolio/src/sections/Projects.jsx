@@ -3,128 +3,192 @@ import { FiGithub, FiExternalLink } from 'react-icons/fi'
 
 const projects = [
   {
-    title: 'SkillMatch Platform',
-    badge: '⭐ Featured',
-    description: 'Built a full-stack job matching platform with intelligent skill-based filtering.',
+    num: '01',
+    title: 'AI Resume Analyzer',
+    status: '🟢 Live',
+    tagline: 'Full-stack AI platform for intelligent resume scoring & feedback',
     bullets: [
-      'Designed a custom scoring algorithm to match candidates with opportunities',
-      'Implemented JWT authentication with three-tier RBAC (candidate / employer / admin)',
-      'Prevented duplicate applications using MongoDB indexing and constraints',
+      'Built Flask REST APIs with clean architecture (controllers, services, repositories)',
+      'Weighted scoring engine: 0–100 score with Hire / Improve / Reject recommendations',
+      'Gemini AI integration for per-JD improvement suggestions and candidate feedback',
+      'Celery + Redis background workers for async resume parsing and AI evaluation',
+      'Redis TTL caching to eliminate redundant AI calls; bcrypt + Pydantic v2 validation',
+    ],
+    tech: ['Python', 'Flask', 'React', 'MySQL', 'Redis', 'Celery', 'Gemini AI', 'JWT'],
+    github: 'https://github.com/alpeshborekar',
+    demo: '#',
+    accent: '#f59e0b',
+  },
+  {
+    num: '02',
+    title: 'SkillMatch Platform',
+    status: '🟢 Live',
+    tagline: 'Job platform with intelligent skill-based candidate matching',
+    bullets: [
+      'Custom skill-overlap scoring with referenced MongoDB collections',
+      'JWT-based RBAC across candidate, employer, and admin roles',
+      'Compound indexes prevent duplicate applications at the database level',
+      'Application lifecycle (applied → shortlisted → rejected) via server-side middleware',
       'Deployed frontend on Vercel and backend on Render',
     ],
-    tech: ['Node.js', 'Express.js', 'MongoDB', 'JWT', 'React', 'Vercel', 'Render'],
+    tech: ['Node.js', 'Express.js', 'MongoDB Atlas', 'JWT', 'React', 'Vercel', 'Render'],
     github: 'https://github.com/alpeshborekar/skillmatch-platform',
     demo: 'https://skillmatch-platform.vercel.app',
+    accent: '#10b981',
   },
   {
+    num: '03',
     title: 'WanderLust',
-    badge: null,
-    description: 'Developed a RESTful backend for a property listing and booking system.',
+    status: '🔵 Backend',
+    tagline: 'Property listing & booking system with secure access control',
     bullets: [
-      'Implemented ownership-based authorization for secure content control',
-      'Designed structured MongoDB schemas with validation rules',
-      'Built centralized error-handling middleware for consistent API responses',
+      'REST APIs for listing and booking with isolated RBAC for host and guest users',
+      'MongoDB schemas with referential integrity across users, listings, and bookings',
+      'Ownership checks on update/delete — only creating host can modify their records',
+      'Consistent error handling and input validation at every route',
     ],
-    tech: ['Node.js', 'Express.js', 'MongoDB', 'REST API'],
+    tech: ['Node.js', 'Express.js', 'MongoDB', 'REST API', 'RBAC'],
     github: 'https://github.com/alpeshborekar/wanderlust',
     demo: null,
-  },
-  {
-    title: 'Python Resume Analyzer',
-    badge: null,
-    description: 'Built an NLP-based system to analyze resumes and match them with job descriptions.',
-    bullets: [
-      'Extracted structured data (skills, education, experience) from raw resumes',
-      'Calculated skill-match percentage using regex and text processing',
-      'Designed modular architecture for easy extension to new job roles',
-    ],
-    tech: ['Python', 'NLP', 'Regex', 'Text Processing'],
-    github: 'https://github.com/alpeshborekar/resume-analyzer',
-    demo: null,
+    accent: '#a78bfa',
   },
 ]
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-16 sm:py-24 px-4 sm:px-6 max-w-5xl mx-auto">
-      <motion.h2
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-2xl sm:text-3xl font-bold text-[#e2e8f0] mb-2"
-      >
-        My <span className="text-[#6366f1]">Projects</span>
-      </motion.h2>
+    <section
+      id="projects"
+      className="py-24 sm:py-32 px-6 sm:px-10 lg:px-20 border-t border-[#1e1e22]"
+    >
+      <div className="max-w-6xl mx-auto">
 
-      <div className="w-12 h-1 bg-[#22c55e] rounded mb-8 sm:mb-10" />
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-[#f59e0b] text-xs font-semibold tracking-[0.2em] uppercase mb-4"
+        >
+          Projects
+        </motion.p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-        {projects.map((p, i) => (
-          <motion.div
-            key={p.title}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-            whileHover={{ scale: 1.02, boxShadow: '0 0 30px rgba(99,102,241,0.15)' }}
-            className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-5 sm:p-6 flex flex-col gap-3 sm:gap-4 transition-all duration-300"
-          >
-            <div className="flex items-center justify-between gap-2">
-              <h3 className="text-base sm:text-lg font-semibold text-[#e2e8f0]">{p.title}</h3>
-              {p.badge && (
-                <span className="text-xs px-2 py-1 rounded-full bg-[#22c55e]/15 text-[#22c55e] font-medium whitespace-nowrap">
-                  {p.badge}
-                </span>
-              )}
-            </div>
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+          className="font-display font-bold text-3xl sm:text-4xl text-[#e8e4dc] mb-14"
+        >
+          Things I've shipped
+        </motion.h2>
 
-            <p className="text-xs sm:text-sm text-[#94a3b8]">{p.description}</p>
+        <div className="flex flex-col gap-6">
+          {projects.map((p, i) => (
+            <motion.div
+              key={p.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="group relative p-6 sm:p-8 rounded-2xl border border-[#1e1e22] bg-[#141416] hover:border-[#2e2e36] transition-all duration-400 overflow-hidden"
+            >
+              {/* Accent glow on hover */}
+              <div
+                className="absolute top-0 left-0 w-full h-1 rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{ backgroundColor: p.accent }}
+              />
 
-            <ul className="flex flex-col gap-1.5 flex-1">
-              {p.bullets.map((b) => (
-                <li key={b} className="flex items-start gap-2 text-xs sm:text-sm text-[#64748b]">
-                  <span className="text-[#6366f1] mt-0.5 shrink-0">→</span>
-                  <span>{b}</span>
-                </li>
-              ))}
-            </ul>
+              <div className="flex flex-col sm:flex-row sm:items-start gap-6">
 
-            <div className="flex flex-wrap gap-1.5 sm:gap-2">
-              {p.tech.map(t => (
-                <span key={t} className="text-xs px-2 py-1 rounded-md bg-[#6366f1]/15 text-[#818cf8] font-medium">
-                  {t}
-                </span>
-              ))}
-            </div>
-
-            {/* ✅ FIXED LINKS */}
-            <div className="flex gap-4 pt-2 border-t border-white/5">
-              <a
-                href={p.github}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-1 text-xs sm:text-sm text-[#94a3b8] hover:text-[#6366f1] transition-colors"
-              >
-                <FiGithub /> GitHub
-              </a>
-
-              {p.demo ? (
-                <a
-                  href={p.demo}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-1 text-xs sm:text-sm text-[#94a3b8] hover:text-[#22c55e] transition-colors"
+                {/* Number */}
+                <span
+                  className="font-display font-bold text-4xl sm:text-5xl leading-none opacity-20 shrink-0"
+                  style={{ color: p.accent }}
                 >
-                  <FiExternalLink /> Live Demo
-                </a>
-              ) : (
-                <span className="flex items-center gap-1 text-xs sm:text-sm text-[#334155] select-none">
-                  <FiExternalLink /> Backend Only
+                  {p.num}
                 </span>
-              )}
-            </div>
-          </motion.div>
-        ))}
+
+                {/* Content */}
+                <div className="flex-1 min-w-0">
+
+                  <div className="flex flex-wrap items-center gap-3 mb-2">
+                    <h3 className="font-display font-bold text-xl sm:text-2xl text-[#e8e4dc]">
+                      {p.title}
+                    </h3>
+
+                    <span className="text-xs px-2 py-0.5 rounded-full bg-[#0c0c0e] border border-[#1e1e22] text-[#6b6b7b]">
+                      {p.status}
+                    </span>
+                  </div>
+
+                  <p className="text-[#6b6b7b] text-sm mb-5">
+                    {p.tagline}
+                  </p>
+
+                  <ul className="flex flex-col gap-2 mb-6">
+                    {p.bullets.map(b => (
+                      <li
+                        key={b}
+                        className="flex items-start gap-3 text-sm text-[#6b6b7b]"
+                      >
+                        <span
+                          className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0"
+                          style={{ backgroundColor: p.accent }}
+                        />
+
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {p.tech.map(t => (
+                      <span
+                        key={t}
+                        className="text-xs px-2.5 py-1 rounded-lg bg-[#0c0c0e] border border-[#1e1e22] text-[#6b6b7b] font-medium"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex gap-5">
+
+                    <a
+                      href={p.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-1.5 text-sm text-[#6b6b7b] hover:text-[#e8e4dc] transition-colors"
+                    >
+                      <FiGithub size={15} />
+                      GitHub
+                    </a>
+
+                    {p.demo ? (
+                      <a
+                        href={p.demo}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex items-center gap-1.5 text-sm hover:text-[#e8e4dc] transition-colors"
+                        style={{ color: p.accent }}
+                      >
+                        <FiExternalLink size={15} />
+                        Live Demo
+                      </a>
+                    ) : (
+                      <span className="flex items-center gap-1.5 text-xs text-[#2e2e36]">
+                        <FiExternalLink size={14} />
+                        Backend Only
+                      </span>
+                    )}
+
+                  </div>
+
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
       </div>
     </section>
   )
