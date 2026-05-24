@@ -4,12 +4,12 @@ const categories = [
   {
     label: 'Languages',
     color: '#f59e0b',
-    skills: ['JavaScript (ES6+)', 'Java', 'Python'],
+    skills: ['JavaScript (ES6+)', 'TypeScript', 'Python', 'Java', 'SQL'],
   },
   {
     label: 'Backend',
     color: '#10b981',
-    skills: ['Node.js', 'Express.js', 'Flask', 'REST APIs', 'JWT', 'RBAC', 'bcrypt', 'Celery', 'Middleware'],
+    skills: ['Node.js', 'Express.js', 'Flask', 'REST APIs', 'JWT', 'RBAC', 'bcrypt', 'BullMQ', 'Celery', 'Socket.IO'],
   },
   {
     label: 'Frontend',
@@ -17,9 +17,9 @@ const categories = [
     skills: ['React', 'HTML', 'CSS', 'Tailwind CSS'],
   },
   {
-    label: 'Databases',
+    label: 'Databases & Cache',
     color: '#f97316',
-    skills: ['MongoDB', 'MySQL', 'Redis', 'Schema Design', 'Indexing', 'Caching'],
+    skills: ['PostgreSQL', 'MongoDB Atlas', 'MySQL', 'Redis', 'Schema Design', 'Indexing', 'TTL Caching', 'Pub/Sub'],
   },
   {
     label: 'AI / ML',
@@ -27,9 +27,14 @@ const categories = [
     skills: ['Google Gemini API', 'NLP', 'Resume Parsing', 'Pydantic v2'],
   },
   {
-    label: 'Tools & Infra',
+    label: 'DevOps & Cloud',
+    color: '#ec4899',
+    skills: ['Docker', 'AWS S3', 'MinIO', 'GitHub Actions', 'Prometheus', 'Grafana', 'Swagger/OpenAPI', 'Vercel', 'Render'],
+  },
+  {
+    label: 'Tools',
     color: '#6b6b7b',
-    skills: ['Git', 'GitHub', 'Postman', 'Vercel', 'Render', 'VS Code', 'Firebase'],
+    skills: ['Git', 'GitHub', 'Postman', 'VS Code', 'Firebase'],
   },
 ]
 
@@ -65,7 +70,7 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: ci * 0.08 }}
-              className="p-5 rounded-xl border border-[#1e1e22] bg-[#141416] hover:border-[#1e1e22]/80 transition-all duration-300"
+              className="p-5 rounded-xl border border-[#1e1e22] bg-[#141416] transition-all duration-300 hover:border-[#2e2e36]"
             >
               <div className="flex items-center gap-2 mb-4">
                 <span
@@ -97,6 +102,7 @@ export default function Skills() {
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   )
