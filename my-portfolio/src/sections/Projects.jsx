@@ -32,6 +32,9 @@ const projects = [
     demo: 'https://cloudstash-4cb1.onrender.com/api-docs/',
     accent: '#f59e0b',
     isNew: true,
+    diagram: cloudstashDiagram,
+    caption:
+      'Async file processing workflow using Redis caching, BullMQ workers, PostgreSQL metadata storage, and AWS S3 object storage.',
   },
 
   {
