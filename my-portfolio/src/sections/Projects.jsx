@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { FiGithub, FiExternalLink } from 'react-icons/fi'
 // import cloudstashDiagram from '../assets/diagrams/cloudstash-architecture.svg'
-import jobEvalDiagram from '../assets/diagrams/job-evaluation-architecture.svg'
+import jobEvalDiagram from '../assets/diagrams/job-evaluation-architecture.png'
 
 const projects = [
   {
