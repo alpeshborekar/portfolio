@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion'
 import { FiGithub, FiExternalLink } from 'react-icons/fi'
+// import cloudstashDiagram from '../assets/diagrams/cloudstash-architecture.svg'
+import jobEvalDiagram from '../assets/diagrams/job-evaluation-architecture.svg'
 
 const projects = [
   {
@@ -31,33 +33,34 @@ const projects = [
     accent: '#f59e0b',
     isNew: true,
   },
-  {
-    num: '02',
-    title: 'AI Resume Analyzer',
-    status: 'Live',
-    tagline: 'Full-stack AI platform for intelligent resume scoring and feedback',
-    bullets: [
-      'Built Flask REST APIs with clean architecture — controllers, services, repositories, validators',
-      'Weighted scoring engine producing 0-100 score with Hire / Improve / Reject recommendations',
-      'Gemini AI integration for per-JD improvement suggestions and candidate feedback',
-      'Celery + Redis background workers for async resume parsing and AI evaluation',
-      'Redis TTL caching to eliminate redundant AI calls; bcrypt + Pydantic v2 validation',
-    ],
-    tech: [
-      'Python',
-      'Flask',
-      'React',
-      'MySQL',
-      'Redis',
-      'Celery',
-      'Gemini AI',
-      'JWT',
-    ],
-    github: 'https://github.com/alpeshborekar',
-    demo: 'https://resume-ai-ai-powered-ats-resume-ana.vercel.app/',
-    accent: '#10b981',
-    isNew: false,
-  },
+ {
+  num: '02',
+  title: 'Job Evaluation Platform',
+  status: 'Live',
+  tagline: 'Backend platform for async resume evaluation and scoring workflows',
+  bullets: [
+    'Built Flask REST APIs using controllers, services, repositories, and validators to keep the codebase modular and maintainable',
+    'Designed a scoring engine that compares resumes against job descriptions across skills, experience, and keywords',
+    'Celery + Redis background workers process resume parsing and evaluation asynchronously',
+    'Redis TTL caching skips repeated processing for the same resume-job description pair',
+    'Secured APIs with bcrypt authentication and Pydantic v2 request validation',
+  ],
+  tech: [
+    'Python',
+    'Flask',
+    'MySQL',
+    'Redis',
+    'Celery',
+    'JWT',
+  ],
+  github: 'https://github.com/alpeshborekar',
+  demo: 'https://resume-ai-ai-powered-ats-resume-ana.vercel.app/',
+  accent: '#10b981',
+  isNew: false,
+  diagram: jobEvalDiagram,
+  caption:
+    'Async scoring workflow using Flask API, Redis queue, Celery workers, and MySQL persistence.',
+},
   {
     num: '03',
     title: 'SkillMatch Platform',
