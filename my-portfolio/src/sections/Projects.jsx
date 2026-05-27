@@ -33,34 +33,36 @@ const projects = [
     accent: '#f59e0b',
     isNew: true,
   },
- {
-  num: '02',
-  title: 'Job Evaluation Platform',
-  status: 'Live',
-  tagline: 'Backend platform for async resume evaluation and scoring workflows',
-  bullets: [
-    'Built Flask REST APIs using controllers, services, repositories, and validators to keep the codebase modular and maintainable',
-    'Designed a scoring engine that compares resumes against job descriptions across skills, experience, and keywords',
-    'Celery + Redis background workers process resume parsing and evaluation asynchronously',
-    'Redis TTL caching skips repeated processing for the same resume-job description pair',
-    'Secured APIs with bcrypt authentication and Pydantic v2 request validation',
-  ],
-  tech: [
-    'Python',
-    'Flask',
-    'MySQL',
-    'Redis',
-    'Celery',
-    'JWT',
-  ],
-  github: 'https://github.com/alpeshborekar',
-  demo: 'https://resume-ai-ai-powered-ats-resume-ana.vercel.app/',
-  accent: '#10b981',
-  isNew: false,
-  diagram: jobEvalDiagram,
-  caption:
-    'Async scoring workflow using Flask API, Redis queue, Celery workers, and MySQL persistence.',
-},
+
+  {
+    num: '02',
+    title: 'Job Evaluation Platform',
+    status: 'Live',
+    tagline: 'Backend platform for async resume evaluation and scoring workflows',
+    bullets: [
+      'Built Flask REST APIs using controllers, services, repositories, and validators to keep the codebase modular and maintainable',
+      'Designed a scoring engine that compares resumes against job descriptions across skills, experience, and keywords',
+      'Celery + Redis background workers process resume parsing and evaluation asynchronously',
+      'Redis TTL caching skips repeated processing for the same resume-job description pair',
+      'Secured APIs with bcrypt authentication and Pydantic v2 request validation',
+    ],
+    tech: [
+      'Python',
+      'Flask',
+      'MySQL',
+      'Redis',
+      'Celery',
+      'JWT',
+    ],
+    github: 'https://github.com/alpeshborekar',
+    demo: 'https://resume-ai-ai-powered-ats-resume-ana.vercel.app/',
+    accent: '#10b981',
+    isNew: false,
+    diagram: jobEvalDiagram,
+    caption:
+      'Async scoring workflow using Flask API, Redis queue, Celery workers, and MySQL persistence.',
+  },
+
   {
     num: '03',
     title: 'SkillMatch Platform',
@@ -87,6 +89,7 @@ const projects = [
     accent: '#a78bfa',
     isNew: false,
   },
+
   {
     num: '04',
     title: 'WanderLust',
@@ -220,6 +223,27 @@ export default function Projects() {
                       </span>
                     ))}
                   </div>
+
+                  {/* Architecture Diagram */}
+                  {p.diagram && (
+                    <div className="mb-6">
+                      <h4 className="text-sm font-semibold text-[#e8e4dc] mb-3">
+                        System Architecture
+                      </h4>
+
+                      <div className="rounded-2xl overflow-hidden border border-[#1e1e22] bg-[#0c0c0e] p-3">
+                        <img
+                          src={p.diagram}
+                          alt={`${p.title} Architecture Diagram`}
+                          className="w-full rounded-xl object-cover"
+                        />
+                      </div>
+
+                      <p className="text-xs text-[#6b6b7b] mt-3">
+                        {p.caption}
+                      </p>
+                    </div>
+                  )}
 
                   {/* Links */}
                   <div className="flex gap-5">
