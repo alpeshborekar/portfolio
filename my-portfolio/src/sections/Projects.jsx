@@ -305,48 +305,37 @@ export default function Projects() {
                     </div>
                   )}
 
-                  {/* Links */}
-                  <div className="flex gap-5">
+                {/* Links */}
+<div className="flex gap-5">
 
-                    {/* GitHub */}
-                    
-                      href={p.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="flex items-center gap-1.5 text-sm text-[#6b6b7b] hover:text-[#e8e4dc] transition-colors"
-                    >
-                      <FiGithub size={15} />
-                      GitHub
-                    </a>
+  {/* GitHub */}
+  <a
+    href={p.github}
+    target="_blank"
+    rel="noreferrer"
+    className="flex items-center gap-1.5 text-sm text-[#6b6b7b] hover:text-[#e8e4dc] transition-colors"
+  >
+    <FiGithub size={15} />
+    GitHub
+  </a>
 
-                    {/* Demo */}
-                    {p.demo ? (
-                      
-                        href={p.demo}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex items-center gap-1.5 text-sm transition-colors hover:opacity-80"
-                        style={{ color: p.accent }}
-                      >
-                        <FiExternalLink size={15} />
-                        Live Demo
-                      </a>
-                    ) : (
-                      <span className="flex items-center gap-1.5 text-xs text-[#2e2e36]">
-                        <FiExternalLink size={14} />
-                        Backend Only
-                      </span>
-                    )}
+  {/* Demo */}
+  {p.demo ? (
+    <a
+      href={p.demo}
+      target="_blank"
+      rel="noreferrer"
+      className="flex items-center gap-1.5 text-sm transition-colors hover:opacity-80"
+      style={{ color: p.accent }}
+    >
+      <FiExternalLink size={15} />
+      Live Demo
+    </a>
+  ) : (
+    <span className="flex items-center gap-1.5 text-xs text-[#2e2e36]">
+      <FiExternalLink size={14} />
+      Backend Only
+    </span>
+  )}
 
-                  </div>
-
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-      </div>
-    </section>
-  )
-}
+</div>
