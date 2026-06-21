@@ -305,7 +305,7 @@ export default function Projects() {
                     </div>
                   )}
 
-                {/* Links */}
+         {/* Links */}
 <div className="flex gap-5">
 
   {/* GitHub */}
@@ -337,5 +337,4 @@ export default function Projects() {
       Backend Only
     </span>
   )}
-
 </div>
