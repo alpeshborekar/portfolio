@@ -6,6 +6,63 @@ import jobEvalDiagram from '../assets/diagrams/job-evaluation-architecture.png'
 const projects = [
   {
     num: '01',
+    title: 'Outreach OS',
+    status: 'Live',
+    tagline: 'AI-powered outreach automation — resume parsing, company research, and personalized email generation',
+    bullets: [
+      'Parses an uploaded resume PDF and extracts skills, projects, and technologies automatically',
+      'AI-driven company research and personalized email generation using the OpenAI GPT-4o API',
+      'Human-in-the-loop approval queue — every AI-generated email is reviewed, edited, or rejected before sending',
+      'Gmail API integration with OAuth2 for sending and inbox polling, with reply detection that auto-cancels scheduled follow-ups',
+      'BullMQ and Redis background jobs handle company research, email generation, and follow-up scheduling asynchronously',
+      'Live React dashboard with real-time campaign stats, reply tracking, and activity feed',
+    ],
+    tech: [
+      'Node.js',
+      'Express.js',
+      'React',
+      'PostgreSQL',
+      'Redis',
+      'BullMQ',
+      'Gmail API',
+      'OpenAI GPT-4o',
+    ],
+    github: 'https://github.com/alpeshborekar/outreach-automation',
+    demo: null,
+    accent: '#ec4899',
+    isNew: true,
+  },
+
+  {
+    num: '02',
+    title: 'Webhook Delivery System',
+    status: 'Live',
+    tagline: 'Reliable webhook delivery platform with retries, replay, and dead letter queue handling',
+    bullets: [
+      'Incoming events queued via BullMQ and Redis, processed by a separate worker — API responds immediately while delivery happens in the background',
+      'Retry handling with exponential backoff across five attempts; events that keep failing move to a dead letter queue with review, retry, or discard endpoints',
+      'Outgoing webhook payloads signed with HMAC-SHA256, with timestamp validation to prevent replay attacks',
+      'Replay system to resend a single failed event or all failures for an endpoint, with delivery attempts logged for auditing',
+      'Prometheus metrics and Grafana dashboards tracking queue depth, delivery latency, and success rate',
+    ],
+    tech: [
+      'Node.js',
+      'Express.js',
+      'PostgreSQL',
+      'Redis',
+      'BullMQ',
+      'Docker',
+      'Prometheus',
+      'Grafana',
+    ],
+    github: 'https://github.com/alpeshborekar/webhook-delivery-system',
+    demo: null,
+    accent: '#38bdf8',
+    isNew: true,
+  },
+
+  {
+    num: '03',
     title: 'CloudStash',
     status: 'Live',
     tagline: 'Scalable cloud file storage backend — Google Drive / Dropbox style',
@@ -28,17 +85,17 @@ const projects = [
       'Docker',
       'Prometheus',
     ],
-    github: 'https://github.com/alpeshborekar',
+    github: 'https://github.com/alpeshborekar/cloudstash',
     demo: 'https://cloudstash-4cb1.onrender.com/api-docs/',
     accent: '#f59e0b',
-    isNew: true,
+    isNew: false,
     diagram: cloudstashDiagram,
     caption:
       'Async file processing workflow using Redis caching, BullMQ workers, PostgreSQL metadata storage, and AWS S3 object storage.',
   },
 
   {
-    num: '02',
+    num: '04',
     title: 'Job Evaluation Platform',
     status: 'Live',
     tagline: 'Backend platform for async resume evaluation and scoring workflows',
@@ -57,7 +114,7 @@ const projects = [
       'Celery',
       'JWT',
     ],
-    github: 'https://github.com/alpeshborekar',
+    github: 'https://github.com/alpeshborekar/Job-Evaluation-Platform',
     demo: 'https://resume-ai-ai-powered-ats-resume-ana.vercel.app/',
     accent: '#10b981',
     isNew: false,
@@ -67,7 +124,7 @@ const projects = [
   },
 
   {
-    num: '03',
+    num: '05',
     title: 'SkillMatch Platform',
     status: 'Live',
     tagline: 'Job platform with intelligent skill-based candidate matching',
@@ -94,7 +151,7 @@ const projects = [
   },
 
   {
-    num: '04',
+    num: '06',
     title: 'WanderLust',
     status: 'Backend',
     tagline: 'Property listing and booking system with secure access control',
@@ -252,7 +309,7 @@ export default function Projects() {
                   <div className="flex gap-5">
 
                     {/* GitHub */}
-                    <a
+                    
                       href={p.github}
                       target="_blank"
                       rel="noreferrer"
@@ -264,7 +321,7 @@ export default function Projects() {
 
                     {/* Demo */}
                     {p.demo ? (
-                      <a
+                      
                         href={p.demo}
                         target="_blank"
                         rel="noreferrer"
